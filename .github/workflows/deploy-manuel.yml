@@ -1,6 +1,4 @@
-# This is a basic workflow that is manually triggered
-
-name: deploy manual
+name: Deploy Manual
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -10,7 +8,7 @@ on:
     inputs:
       deploy_env:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'deploy'
+        description: 'Deploy Environmet'
         # Default value if no value is explicitly provided
         default: 'mywisp'
         # Input has to be provided for the workflow to run
@@ -19,18 +17,18 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   deploy:
-    name: deployment
+    name: Deployment
     runs-on: ubuntu-latest
     
     steps:
-      -uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       
-      -name: Setup PHP
-       uses: shivammathur/setup-php@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
           php-version: 8.1
           
-      - name: install Dependencies
+      - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist --ignore-platform-reqs
         
       - name: Deploy
