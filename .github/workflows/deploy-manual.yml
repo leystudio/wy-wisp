@@ -34,6 +34,6 @@ jobs:
       - name: Deploy
         uses: deployphp/action@master
         with:
-          private-key: ${{ secrets.PRIVATE_KEY }}
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
-          dep: deploy ${{ github.event.inputs.deploy_env }} -v
+          private-key: ${{secrets.PRIVATE_KEY}}
+          known_hosts: ${{secrets.KNOWN_HOSTS}}
+          dep: deploy ${{github.event.inputs.deploy_env}} -v
