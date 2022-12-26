@@ -6,7 +6,7 @@ config:
   repository: "git@github.com:leystudio/wy-wisp.git"
 
 hosts:
-  red:
+  wisp:
     remote_user: root
     hostname: mywisp.online
     deploy_path: "/var/www/{{hostname}}"
