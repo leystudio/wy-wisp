@@ -31,4 +31,4 @@ jobs:
         with:
           private-key: ${{secrets.PRIVATE_KEY}}
           known_hosts: ${{secrets.KNOWN_HOSTS}}
-          dep: deploy red -v
+          dep: deploy mywisp -v
