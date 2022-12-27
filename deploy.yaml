@@ -3,7 +3,7 @@ import:
   - contrib/npm.php
 
 config:
-  repository: "git@github.com:leystudio/wy-wisp.git"
+   repository: "https://github.com/leystudio/wy-wisp.git"
 
 hosts:
   mywisp:
