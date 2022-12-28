@@ -23,7 +23,6 @@ tasks:
     - artisan:migrate
     - npm:install
     - build
-    - dev
     - deploy:publish
 
   build:
