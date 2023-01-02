@@ -185,6 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
+        InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
 
         /*
          * Application Service Providers...
