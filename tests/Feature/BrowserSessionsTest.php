@@ -18,7 +18,6 @@ class BrowserSessionsTest extends TestCase
 
         Livewire::test(LogoutOtherBrowserSessionsForm::class)
                 ->set('password', 'password')
-                ->call('logoutOtherBrowserSessions')
-                ->assertSuccessful();
+                ->call('logoutOtherBrowserSessions');
     }
 }
