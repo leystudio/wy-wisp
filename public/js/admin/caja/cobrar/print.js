@@ -1,5 +1,5 @@
 function print(data) {
-    $(".contenedor_factura").hide();s
+    $(".contenedor_factura").hide();
     $(".btn_cerrar_factura").click(function () {
         $(".contenedor_factura").hide(); //esconde el contenedor
     });
