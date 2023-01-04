@@ -22,7 +22,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('suspender:clientes')->daily();
         $schedule->command('suspender:clientes')->daily();
-        $schedule->command('generar:facturas')->everyFifteenMinutes();
+        $schedule->command('generar:facturas')->monthlyOn(1, '12:00');
     }
 
     /**
