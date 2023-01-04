@@ -88,7 +88,7 @@ Route::controller(HtmlController::class)->group(function () {
 });
 
 Route::controller(FacturasController::class)->group(function () {
-    Route::get('facturas', 'generar_facturas');
+    Route::get('facturas', 'generar');
 });
 Route::controller(CajaController::class)->group(function () {
     Route::get('cobrar_dt', 'cobrar_data');

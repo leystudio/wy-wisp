@@ -15,12 +15,14 @@ class Kernel extends ConsoleKernel
      * @return void
      */
     protected $commands = [
-        Commands\suspender_clientes::class
+        Commands\suspender_clientes::class,
+        Commands\generar_facturas::class
     ];
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('suspender:clientes')->daily();
         $schedule->command('suspender:clientes')->daily();
+        //$schedule->command('generar:facturas')->everyMinute();
     }
 
     /**

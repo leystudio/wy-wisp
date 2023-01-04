@@ -6,16 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\Cliente;
 use App\Models\Empresa;
 use App\Models\Factura;
-use App\Models\Flujo;
+use App\Models\Ddp;
 use App\Models\Plane;
 use Illuminate\Http\Request;
 
 class FacturasController extends Controller
 {
-    public function generar_facturas()
+    public function generar()
     {
         $planes = Plane::all();
-        $diaspagos = Flujo::all();
+        $diaspagos = Ddp::all();
         $clientes = Cliente::all();
         $factura = [];
         foreach ($clientes as $cliente) {
@@ -23,13 +23,13 @@ class FacturasController extends Controller
             $factura['empresa_id']  = $cliente->empresa_id;
             foreach ($planes as $plan) {
                 if ($cliente->plan_id == $plan->id) {
-
+                    
                     $factura['monto'] = $plan->precio;
                 }
             }
             foreach ($diaspagos as $diapago) {
-                if ($cliente->diaspago_id == $diapago->id) {
-
+                if ($cliente->ddp_id == $diapago->id) {
+                    
                     $plazo = $diapago->plazo;
                     $fecha_pago = date("Y-m-") . $diapago->dia;
                     $vence = date('Y-m-d', strtotime($fecha_pago . "+ " . $plazo . " days"));
