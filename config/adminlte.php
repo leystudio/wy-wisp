@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'title' => '(((SimpleWisp)))',
-    'title_prefix' => '',
+    'title' => 'MyWisp',
+    'title_prefix' => 'Mywisp - ',
     'title_postfix' => '',
 
     /*
@@ -45,13 +45,13 @@ return [
     |
     */
 
-    'logo' => '(((SimpleWisp)))',
-    'logo_img' => 'storage/w.png',
+    'logo' => 'mywisp',
+    'logo_img' => 'storage/mywisp_logo.png',
     //'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3 logo_empresa',
     'logo_img_xl' => '',
     'logo_img_xl_class' => 'logo_empresa brand-image img-circle elevation-3  brand-image-xs',
-    'logo_img_alt' => '(((SimpleWisp)))',
+    'logo_img_alt' => 'MyWisp',
 
     /*
     |--------------------------------------------------------------------------
