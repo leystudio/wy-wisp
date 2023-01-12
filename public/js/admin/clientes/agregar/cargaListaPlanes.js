@@ -1,3 +1,5 @@
+//const { on } = require("events");
+
 function listarPlanes() {
     planes = "";
     $.ajax({
@@ -11,7 +13,7 @@ function listarPlanes() {
             if (result.length > 0) {
                 for (i = 0; i < result.length; i++) {
                     planes +=
-                        `<div class="form-check  bg-secondary listaPlanes rounded p-2 mb-2" id_plan=` +
+                        `<div class="form-check  bg-secondary listaPlanes rounded p-2 mb-2" id=` +
                         result[i]["id"] +
                         `>
                         <input class="form-check-input item_plan" name="planes" type="radio" id=` +
@@ -50,10 +52,11 @@ function listarPlanes() {
 
                 $("#plan_contenedor").html("");
                 $("#plan_contenedor").html(planes);
-                select_plan = document.getElementById("plan_contenedor");
-                select_plan.addEventListener("click", function (e) {
-                    id_plan = e.path[1].getAttribute("id_plan");
-                });
+                $('#plan_contenedor').on('click','.listaPlanes',function(){
+                    //=  this[].attr('id_plan')
+                    id_plan$(this)[0].id
+                })
+                
                 $(".item_plan")[0].click();
                 $(".crear").show(150);
             } else {
