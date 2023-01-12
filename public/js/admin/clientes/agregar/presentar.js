@@ -1,5 +1,5 @@
 function presentar(id) {
-    window.location.href = "http://wisp.test/admin/show-client";
+    window.location.href = "https://mywisp.online/admin/show-client";
 
     /* 
     $.ajax({
