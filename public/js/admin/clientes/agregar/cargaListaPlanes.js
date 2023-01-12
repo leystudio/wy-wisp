@@ -54,7 +54,7 @@ function listarPlanes() {
                 $("#plan_contenedor").html(planes);
                 $('#plan_contenedor').on('click','.listaPlanes',function(){
                     //=  this[].attr('id_plan')
-                    id_plan$(this)[0].id
+                    id_plan=$(this)[0].id
                 })
                 
                 $(".item_plan")[0].click();
