@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cliente;
 use App\Models\Empresa;
 use App\Models\Factura;
-use Illuminate\Http\Request;
+ use Illuminate\Http\Request;
 
 class EstadosController extends Controller
 {
@@ -41,23 +41,25 @@ class EstadosController extends Controller
 
     public function suspender()
     {
-        $empresa_id = Empresa::where('user_id', Auth()->user()->id)->select('id')->get()[0]['id']; //id de la empresa
-
-        $facturas = Factura::where('empresa_id', $empresa_id)->get();
+        
+     // $empresa_id = Empresa::where("user_id", Auth()->user()->id)->select("id")->get()[0]["id"]; //id de la empresa
+      $empresas_id = Empresa::select('id')->get(); //id de la empresa
+     foreach($empresas_id as $empresa_id){
+        $facturas = Factura::where('empresa_id', $empresa_id->id)->get();
         $fecha_actual = strtotime(date('Y-m-d'), time());
         foreach ($facturas as $factura) {
             if ($factura->estado_id == 1) {
-
-                $fecha_limite = strtotime($factura->vence, time());
-                if ($fecha_limite < $fecha_actual) { // que hacer cuando se vence una factura
-                    Factura::find($factura->id)->update([ //pasar factura a estado vencida
-                        'estado' => 0
-                    ]);
-                    Cliente::find($factura->cliente_id)->update([ //pasar cliente a estado vencido
-                        'estado' => 0
-                    ]);
+                    $fecha_limite = strtotime($factura->vence, time());
+                    if ($fecha_limite < $fecha_actual) { // que hacer cuando se vence una factura
+                        Factura::find($factura->id)->update([ //pasar factura a estado vencida
+                            'estado' => 0
+                        ]);
+                        Cliente::find($factura->cliente_id)->update([ //pasar cliente a estado vencido
+                            'estado' => 0
+                        ]);
+                    }
                 }
-            }
+            }   
         }
     }
 }
