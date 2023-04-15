@@ -8,6 +8,7 @@ function url_logo() {
         dataType: "json",
         success: function (urlLogo) {
             $(".logo_emp").attr("src", urlLogo[0]);
+           
         },
         error: function (jqXHR, exception) {
             //si la session se perdio->
