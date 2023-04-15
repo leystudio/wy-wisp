@@ -44,6 +44,7 @@
 <script src="{{ asset('js/admin/caja/cobrar/cobrar.js') }}"></script>
 <script src="{{ asset('js/admin/caja/cobrar/print.js') }}"></script>
 <script src="{{ asset('js/admin/logo/url_logo.js') }}"></script>
+<script>url_logo()</script>
 <script src="{{ asset('js/admin/empresa/nombre/nombre_empresa.js') }}"></script>
 {{-- url logo --}}
 @endsection
