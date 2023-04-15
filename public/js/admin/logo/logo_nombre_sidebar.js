@@ -9,8 +9,11 @@ window.addEventListener("load", function () {
         success: function (urlLogo) {
             if (!urlLogo[0]) {
                 $(".logo_empresa").attr("src", "/storage/w.png");
+                console.log('logo al cargar la pagina home')
             } else {
                 $(".logo_empresa").attr("src", urlLogo[0]);
+                console.log('logo al cargar una pagina')
+
             }
             $(".brand-text").html(urlLogo[1]);
         },
