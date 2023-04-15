@@ -45,11 +45,11 @@ class EstadosController extends Controller
      // $empresa_id = Empresa::where("user_id", Auth()->user()->id)->select("id")->get()[0]["id"]; //id de la empresa
       $empresas_id = Empresa::select('id')->get(); //id de la empresa
      foreach($empresas_id as $empresa_id){
-        $facturas = Factura::where('empresa_id', $empresa_id->id)->get();
-        $fecha_actual = strtotime(date('Y-m-d'), time());
+         $facturas = Factura::where('empresa_id', $empresa_id->id)->get();
+          $fecha_actual = strtotime(date('Y-m-d'), time());
         foreach ($facturas as $factura) {
-            if ($factura->estado_id == 1) {
-                    $fecha_limite = strtotime($factura->vence, time());
+             if ($factura->estado == 1) {
+                 $fecha_limite = strtotime($factura->vence, time());
                     if ($fecha_limite < $fecha_actual) { // que hacer cuando se vence una factura
                         Factura::find($factura->id)->update([ //pasar factura a estado vencida
                             'estado' => 0
