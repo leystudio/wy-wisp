@@ -29,7 +29,7 @@ class clientesController extends Controller
     {
         $empresa_id = Empresa::where('user_id', Auth()->user()->id)->select('id')->get()[0]['id']; //id de la empresa
         $clientes = Cliente::where('empresa_id', $empresa_id)
-            ->select('nombre', 'apellido', 'id', 'telefono', 'plan_id')
+            ->select('nombre', 'apellido', 'id', 'plan_id')
             ->orderBy('id', 'desc')
             ->get();
         return datatables($clientes)->toJson();
