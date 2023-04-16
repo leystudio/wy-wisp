@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 //use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\admin\EstadosController;
-use App\Models\Nota;
 
 use Illuminate\Console\Command;
 
@@ -14,7 +13,7 @@ class suspender_clientes extends Command
      *
      * @var string
      */
-    protected $signature = 'suspender:clientes';
+    protected $signature = 'suspende:clientes';
 
     /**
      * The console command description.
@@ -30,13 +29,10 @@ class suspender_clientes extends Command
      */
     public function handle()
     {
-        $nota=new Nota();
-        $nota->nota='desde suspender';
-        $nota->empresa_id=1;
-        $nota->save();
+       
        // $texto=date("i:s");
        //Storage::append("archivo.txt",$texto);
-       // $cortar = new EstadosController();
-      // $cortar->suspender();
+       $cortar = new EstadosController();
+       $cortar->suspender();
     }
 }

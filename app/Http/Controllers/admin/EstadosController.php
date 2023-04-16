@@ -45,6 +45,10 @@ class EstadosController extends Controller
     public function suspender()
     {
          
+       /* $nota=new Nota();
+        $nota->nota='desde suspender 2';
+        $nota->empresa_id=1;
+        $nota->save();*/
      // $empresa_id = Empresa::where("user_id", Auth()->user()->id)->select("id")->get()[0]["id"]; //id de la empresa
       $empresas_id = Empresa::select('id')->get(); //id de la empresa
      foreach($empresas_id as $empresa_id){

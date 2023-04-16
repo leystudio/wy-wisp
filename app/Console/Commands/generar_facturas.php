@@ -29,7 +29,7 @@ class generar_facturas extends Command
      */
     public function handle()
     {
-         $generar= new FacturasController();
+        $generar= new FacturasController();
         $generar-> generar(); 
 
         
