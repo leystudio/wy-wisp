@@ -266,8 +266,20 @@ return [
 
                 ],
             ],
-        ],
+        ]
+        ,
+        [
+            //CAJA
+            'text'    => 'Caja',
+            'icon' => 'fas fa-fw fa-user',
 
+            'submenu' => [
+                [
+                    'text' => 'Facturas',
+                    'route'  => 'caja.cobrar',
+                ],
+            ],
+        ],
         [
             'text'    => 'Materiales',
             'icon' => 'fas fa-fw fa-user',
@@ -281,7 +293,7 @@ return [
             'route'  => 'planes.mostrar',
 
 
-        ],
+        ], 
         //Notas
         [
 
@@ -297,18 +309,7 @@ return [
             'icon' => 'fas fa-fw fa-user',
             'route'  => 'ddp.mostrar',
 
-        ], [
-            //Empresa
-            'text'    => 'Caja',
-            'icon' => 'fas fa-fw fa-user',
-
-            'submenu' => [
-                [
-                    'text' => 'Facturas',
-                    'route'  => 'caja.cobrar',
-                ],
-            ],
-        ], [
+        ],[
             //Empresa
             'text'    => 'Empresa',
             'icon' => 'fas fa-fw fa-user',

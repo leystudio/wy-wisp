@@ -20,10 +20,10 @@ function mostrar_clientes() {
             },
             {
                 data: "apellido",
-            },
+            },/*
             {
                 data: "telefono",
-            },
+            }*/,
             {
                 defaultContent: `
                     <button type="button" class="ver mb-2  btn btn-sm btn-primary">Ver</button>

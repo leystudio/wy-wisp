@@ -19,8 +19,7 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Telefono</th>
+                    <th scope="col">Apellido</th> 
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
