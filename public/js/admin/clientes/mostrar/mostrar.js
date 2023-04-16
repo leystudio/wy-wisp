@@ -20,7 +20,7 @@ function mostrar_clientes() {
             },
             {
                 data: "apellido",
-            },/*
+            }/*,
             {
                 data: "telefono",
             }*/,
