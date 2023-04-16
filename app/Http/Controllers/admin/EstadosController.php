@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Cliente;
 use App\Models\Empresa;
 use App\Models\Factura;
+use App\Models\Instalation;
+
  use Illuminate\Http\Request;
 
 class EstadosController extends Controller
@@ -41,7 +43,10 @@ class EstadosController extends Controller
 
     public function suspender()
     {
-        
+        $nota=new Nota();
+        $nota->nota='hola mundo';
+        $nota->empresa_id=1;
+        $nota->save();
      // $empresa_id = Empresa::where("user_id", Auth()->user()->id)->select("id")->get()[0]["id"]; //id de la empresa
       $empresas_id = Empresa::select('id')->get(); //id de la empresa
      foreach($empresas_id as $empresa_id){
