@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Console\Commands;
-use Illuminate\Support\Facades\Storage;
+//use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\admin\EstadosController;
 use Illuminate\Console\Command;
 
