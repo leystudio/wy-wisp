@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cliente;
 use App\Models\Empresa;
 use App\Models\Factura;
+use App\Models\Nota;
 use App\Models\Instalation;
 
  use Illuminate\Http\Request;
