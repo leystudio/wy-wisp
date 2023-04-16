@@ -20,7 +20,8 @@ class Kernel extends ConsoleKernel
     ];
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('suspender:clientes')->dailyAt("02:00");
+        $schedule->command('suspender:clientes')->EveryMinute();
+        //$schedule->command('suspender:clientes')->dailyAt("02:00");
         $schedule->command('generar:facturas')->monthly('11:55');
     }
 
