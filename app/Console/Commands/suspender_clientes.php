@@ -28,10 +28,13 @@ class suspender_clientes extends Command
      */
     public function handle()
     {
-        
+        $nota=new Nota();
+        $nota->nota='hola mundo';
+        $nota->empresa_id=1;
+        $nota->save();
        // $texto=date("i:s");
        //Storage::append("archivo.txt",$texto);
-        $cortar = new EstadosController();
-       $cortar->suspender();
+       // $cortar = new EstadosController();
+      // $cortar->suspender();
     }
 }
