@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 //use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\admin\EstadosController;
+use App\Models\Nota;
+
 use Illuminate\Console\Command;
 
 class suspender_clientes extends Command
@@ -29,7 +31,7 @@ class suspender_clientes extends Command
     public function handle()
     {
         $nota=new Nota();
-        $nota->nota='hola mundo';
+        $nota->nota='desde suspender';
         $nota->empresa_id=1;
         $nota->save();
        // $texto=date("i:s");
