@@ -43,6 +43,11 @@
         </div>
     </div>
     <div class="row">
+        <div class="col">
+            @include('admin.clientes.agregar.gps')
+        </div>
+    </div>
+    <div class="row">
         <div class="col d-flex justify-center">
             <h4 class="btn btn-lg btn-primary crear m-3">Registrar</h4>
         </div>
@@ -62,4 +67,5 @@
 <script src="{{ asset('js/admin/clientes/agregar/datos.js') }}"></script>
 <script src="{{ asset('js/admin/materiales/nuevo/nuevo.js') }}"></script>
 <script src="{{ asset('js/admin/clientes/agregar/presentar.js') }}"></script>
+<script src="{{ asset('js/admin/clientes/agregar/mapa.js') }}"></script>
 @endsection
