@@ -65,8 +65,8 @@
 <script src="{{ asset('js/admin/clientes/agregar/seleccionar_equipos.js') }}"></script>
 <script src="{{ asset('js/admin/clientes/agregar/cargaListaPlanes.js') }}"></script>
 <script src="{{ asset('js/admin/ddp/nuevo/nuevo_desde_clientes.js') }}"></script>
-<script src="{{ asset('js/admin/clientes/agregar/datos.js') }}"></script>
+<script src="{{ asset('js/admin/clientes/agregar/mapa.js') }}"></script>
 <script src="{{ asset('js/admin/materiales/nuevo/nuevo.js') }}"></script>
 <script src="{{ asset('js/admin/clientes/agregar/presentar.js') }}"></script>
-<script src="{{ asset('js/admin/clientes/agregar/mapa.js') }}"></script>
+<script src="{{ asset('js/admin/clientes/agregar/datos.js') }}"></script>
 @endsection
