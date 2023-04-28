@@ -1,5 +1,4 @@
-//function initMap() {
-
+let coordenadas;
 window.addEventListener("load", function () {
     let markers = [];
     const myLatlng = { lat: 18.93883844065336, lng: -70.36915487401262 };
@@ -34,7 +33,6 @@ window.addEventListener("load", function () {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude,
                     };
-                    $("#coordenadas").val(posicion);
                     map.setCenter(pos);
 
                     //mover el marcador
@@ -87,8 +85,6 @@ window.addEventListener("load", function () {
         });
         $(".del_ubicacion_actual").show(50);
 
-        $("#coordenadas").val(mapsMouseEvent.latLng);
-
         marcar(marker, mapsMouseEvent.latLng);
     });
 
@@ -96,10 +92,11 @@ window.addEventListener("load", function () {
     $(".del_ubicacion_actual").hide();
 
     function marcar(marker, marca) {
+        coordenadas = marca;
         console.log(coordenadas);
         markers = []; //limpia el arrayy
         markers.push(marker); //agrega la posicion del marcador al array
-        console.log(marca); //posicion lat-lng
+
         //boton eliminar ubicacion
         if (markers.length) {
             $(".del_ubicacion_actual").show();
@@ -107,12 +104,13 @@ window.addEventListener("load", function () {
             $(".del_ubicacion_actual").hide();
         }
     }
-    ///}
 
     //quitar ubicacion
     $(".del_ubicacion_actual").on("click", function () {
         markers[0].setMap(null);
         $(".del_ubicacion_actual").hide();
+        coordenadas = "";
+        console.log(coordenadas);
 
         markers = []; //limpia el arrayy
     });
