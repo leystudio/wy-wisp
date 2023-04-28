@@ -1,6 +1,6 @@
 //function initMap() {
+let coordenadas;
 window.addEventListener("load", function () {
-    var coordenadas;
     let markers = [];
     const myLatlng = { lat: 18.93883844065336, lng: -70.36915487401262 };
     const map = new google.maps.Map(document.getElementById("map"), {
