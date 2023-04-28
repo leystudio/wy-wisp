@@ -1,5 +1,5 @@
 //function initMap() {
-var coordenadas;
+
 window.addEventListener("load", function () {
     let markers = [];
     const myLatlng = { lat: 18.93883844065336, lng: -70.36915487401262 };
@@ -34,7 +34,7 @@ window.addEventListener("load", function () {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude,
                     };
-                    coordenadas = posicion;
+                    $("#coordenadas").val(posicion);
                     map.setCenter(pos);
 
                     //mover el marcador
@@ -86,7 +86,8 @@ window.addEventListener("load", function () {
             //title: "Hello World!",
         });
         $(".del_ubicacion_actual").show(50);
-        coordenadas = mapsMouseEvent.latLng;
+
+        $("#coordenadas").val(mapsMouseEvent.latLng);
 
         marcar(marker, mapsMouseEvent.latLng);
     });

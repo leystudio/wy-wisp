@@ -12,10 +12,9 @@
 
         <div style="height:300px" id="map"></div>
     </div>
-    <!--  <div class="card-footer">
-        <i>Coordenadas</i>
-        <b id="coord"></b>
-    </div> -->
+
+    <input type='hidden' id="coordenadas">
+
 </div>
 
 <script
