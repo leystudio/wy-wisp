@@ -1,4 +1,4 @@
-let coordenadas;
+var coordenadas;
 window.addEventListener("load", function () {
     let markers = [];
     const myLatlng = { lat: 18.93883844065336, lng: -70.36915487401262 };
