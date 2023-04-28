@@ -1,5 +1,5 @@
 //function initMap() {
-let coordenadas;
+const coordenadas = {};
 window.addEventListener("load", function () {
     let markers = [];
     const myLatlng = { lat: 18.93883844065336, lng: -70.36915487401262 };
@@ -95,6 +95,7 @@ window.addEventListener("load", function () {
     $(".del_ubicacion_actual").hide();
 
     function marcar(marker, marca) {
+        console.log(coordenadas);
         markers = []; //limpia el arrayy
         markers.push(marker); //agrega la posicion del marcador al array
         console.log(marca); //posicion lat-lng
