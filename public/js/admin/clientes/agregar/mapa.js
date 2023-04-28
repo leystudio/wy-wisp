@@ -47,7 +47,13 @@ window.addEventListener("load", function () {
                         //title: "Hello World!",
                         zoom: 10,
                     });
-                    marcar(marker, posicion);
+                    marcar(
+                        marker,
+                        "lat: " +
+                            position.coords.latitude +
+                            ", lng: " +
+                            position.coords.longitude
+                    );
                 },
                 () => {
                     handleLocationError(true, infoWindow, map.getCenter());
@@ -85,7 +91,13 @@ window.addEventListener("load", function () {
         });
         $(".del_ubicacion_actual").show(50);
 
-        marcar(marker, mapsMouseEvent.latLng);
+        marcar(
+            marker,
+            "lat: " +
+                mapsMouseEvent.latLng.lat() +
+                ", lng: " +
+                mapsMouseEvent.latLng.lng()
+        );
     });
 
     //marcar
