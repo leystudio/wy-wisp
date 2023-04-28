@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
                     apellido: document.getElementById("apellido").value,
                     telefono: document.getElementById("telefono").value,
                     direccion: document.getElementById("direccion").value,
-                    gps: document.getElementById("gps").value,
+                    gps: mapsMouseEvent,
                     comentario: document.getElementById("comentario").value,
                     costo: document.getElementById("costo").value,
                     plan_id: id_plan,

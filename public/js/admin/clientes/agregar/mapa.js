@@ -1,4 +1,6 @@
-function initMap() {
+//function initMap() {
+window.addEventListener("load", function () {
+    var mapsMouseEvent;
     let markers = [];
     const myLatlng = { lat: 18.93883844065336, lng: -70.36915487401262 };
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -13,10 +15,10 @@ function initMap() {
     infoWindow.open(map);
     //BOTON UBICAR
     const locationButton = document.createElement("button");
-
     locationButton.textContent = "Mi ubicacion actual";
     locationButton.classList.add("custom-map-control-button");
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    $(".btn_ubicacion_actual").html(locationButton);
+
     //click en boton ubicar
     locationButton.addEventListener("click", () => {
         // Try HTML5 geolocation.
@@ -43,8 +45,8 @@ function initMap() {
                     const marker = new google.maps.Marker({
                         position: posicion,
                         map,
-                        title: "Hello World!",
-                        zoom: 8,
+                        //title: "Hello World!",
+                        zoom: 10,
                     });
                     marcar(marker, posicion);
                 },
@@ -79,17 +81,36 @@ function initMap() {
         const marker = new google.maps.Marker({
             position: mapsMouseEvent.latLng,
             map,
-            title: "Hello World!",
+            zoom: 4,
+            //title: "Hello World!",
         });
+        $(".del_ubicacion_actual").show(50);
+
         marcar(marker, mapsMouseEvent.latLng);
     });
 
     //marcar
+    $(".del_ubicacion_actual").hide();
+
     function marcar(marker, mapsMouseEvent) {
         markers = []; //limpia el arrayy
         markers.push(marker); //agrega la posicion del marcador al array
         console.log(mapsMouseEvent); //posicion lat-lng
+        //boton eliminar ubicacion
+        if (markers.length) {
+            $(".del_ubicacion_actual").show();
+        } else {
+            $(".del_ubicacion_actual").hide();
+        }
     }
-}
+    ///}
 
-window.initMap = initMap;
+    //quitar ubicacion
+    $(".del_ubicacion_actual").on("click", function () {
+        markers[0].setMap(null);
+        $(".del_ubicacion_actual").hide();
+
+        markers = []; //limpia el arrayy
+    });
+    // window.initMap = initMap;
+});

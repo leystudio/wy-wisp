@@ -44,6 +44,7 @@
     </div>
     <div class="row">
         <div class="col">
+
             @include('admin.clientes.agregar.gps')
         </div>
     </div>
