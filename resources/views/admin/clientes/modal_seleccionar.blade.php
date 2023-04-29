@@ -46,9 +46,8 @@
                     </div>
                     <div class="mb-3 mapa">
                         <div class="card d-flex">
-                            <div class="card-header h4" id="ubicacion"> Ubicacion</div>
+                            <div class="card-header h4"> Ubicacion</div>
                             <div class="card-body">
-
                                 <div style="height:300px" id="div_mapa"></div>
                             </div>
 

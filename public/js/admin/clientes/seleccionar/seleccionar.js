@@ -88,7 +88,7 @@ function cargar_datos_seleccion(datos) {
             datos["dia_pago"]["plazo"]
     );
     //mostrar mapa si existe alguna ubicacion
-    if (datos["instalacion"]["direccion"]) {
+    if (datos["instalacion"]["gps"]) {
         ubicacionGps(datos["instalacion"]["direccion"]);
     } else {
         $(".mapa").hide();
