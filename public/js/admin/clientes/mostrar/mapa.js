@@ -1,19 +1,17 @@
 function ubicacionGps(coords_txt) {
     coords = coords_txt.split(",");
-
-    console.log(coords);
+    const posicion = {
+        lat: parseFloat(coords[0]),
+        lng: parseFloat(coords[1]),
+    };
     const myLatlng = { lat: 18.93883844065336, lng: -70.36915487401262 };
     const map = new google.maps.Map(document.getElementById("div_mapa"), {
-        zoom: 8,
-        center: myLatlng,
+        zoom: 10,
+        center: posicion,
     });
     new google.maps.Marker({
-        position: {
-            lat: parseFloat(coords[0]),
-            lng: parseFloat(coords[1]),
-        },
+        position: posicion,
         map,
-        zoom: 4,
     });
 }
 /* var coordenadas;
