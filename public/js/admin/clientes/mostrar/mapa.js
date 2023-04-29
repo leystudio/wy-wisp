@@ -1,11 +1,15 @@
 function ubicacionGps(coords) {
-    new google.maps.Map(document.getElementById("div_mapa"), {
+    const myLatlng = { lat: 18.93883844065336, lng: -70.36915487401262 };
+    const map = new google.maps.Map(document.getElementById("div_mapa"), {
+        zoom: 8,
+        center: myLatlng,
+    });
+    new google.maps.Marker({
         position: coords,
         map,
         zoom: 4,
     });
 }
-
 /* var coordenadas;
 window.addEventListener("load", function () {
     let markers = [];
