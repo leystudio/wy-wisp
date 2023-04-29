@@ -1,4 +1,6 @@
-function ubicacionGps(coords) {
+function ubicacionGps(coords_txt) {
+    coords = coords_txt.split(",");
+
     console.log(coords);
     const myLatlng = { lat: 18.93883844065336, lng: -70.36915487401262 };
     const map = new google.maps.Map(document.getElementById("div_mapa"), {
@@ -6,7 +8,10 @@ function ubicacionGps(coords) {
         center: myLatlng,
     });
     new google.maps.Marker({
-        position: coords,
+        position: {
+            lat: coords[0],
+            lng: coords[1],
+        },
         map,
         zoom: 4,
     });
