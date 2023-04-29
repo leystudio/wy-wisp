@@ -1,5 +1,4 @@
-<div class="modal fade" id="seleccionar_cliente"  tabindex="-1"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="seleccionar_cliente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,18 +9,18 @@
                 {{-- Formulario --}}
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
-                    <input id="nombre_seleccion" readonly type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default">
+                    <input id="nombre_seleccion" readonly type="text" class="form-control"
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Apellido</span>
-                    <input id="apellido_seleccion" readonly type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default">
+                    <input id="apellido_seleccion" readonly type="text" class="form-control"
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Telefono</span>
-                    <input id="telefono_seleccion" readonly type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-default">
+                    <input id="telefono_seleccion" readonly type="text" class="form-control"
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
 
 
@@ -31,7 +30,7 @@
                     <div id="plan_cliente">
                     </div>
                 </div>
-                 <div class="mb-3">
+                <div class="mb-3">
                     <i>Pago</i>
                     <div id="dia_flujo">
                     </div>
@@ -42,23 +41,35 @@
                     <i>Instalacion</i>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default"> Direccion</span>
-                        <input id="direccion_seleccion" readonly  type="text" class="  form-control"
+                        <input id="direccion_seleccion" readonly type="text" class="  form-control"
                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <div class="mb-3 mapa">
+                        <div class="card d-flex">
+                            <div class="card-header h4" id="ubicacion"> Ubicacion</div>
+                            <div class="card-body">
+
+                                <div style="height:300px" id="div_mapa"></div>
+                            </div>
+
+
+                        </div>
+
                     </div>
 
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Costo</span>
-                        <input id="costo_seleccion" readonly  readonly type="text  " class="form-control"
+                        <input id="costo_seleccion" readonly readonly type="text  " class="form-control"
                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Fecha</span>
-                        <input id="fecha_seleccion" readonly  readonly type="text  " class="form-control"
+                        <input id="fecha_seleccion" readonly readonly type="text  " class="form-control"
                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
 
-                 
-                    
+
+
                     <i>Materiales</i>
                     <table class="table table-sm table-responsive-sm table-secondary">
                         <thead>
@@ -71,14 +82,14 @@
 
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Comentario</span>
-                        <input id="comentario_seleccion"  type="text" readonly  class=" form-control"
+                        <input id="comentario_seleccion" type="text" readonly class=" form-control"
                             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                 </div>
 
 
             </div>
-            
+
         </div>
     </div>
 </div>

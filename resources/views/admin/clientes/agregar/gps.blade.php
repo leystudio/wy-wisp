@@ -1,9 +1,6 @@
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<style>
-.del_location {
-    text: red;
-}
-</style>
+<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+
+
 <div class="card d-flex">
     <div class="card-header h4" id="ubicacion"> Ubicacion</div>
     <div class="  btn btn-info btn_ubicacion_actual  "> Ubicacion actual</div>
@@ -17,6 +14,6 @@
 
 </div>
 
-<script
+<!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEcsXf99m1yL7XqPZ4pW0OvGlPUwqPbVI&callback=initMap&v=weekly"
-    defer></script>
+    defer></script> -->

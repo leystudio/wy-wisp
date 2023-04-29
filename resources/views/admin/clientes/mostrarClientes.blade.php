@@ -19,7 +19,7 @@
                 <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th> 
+                    <th scope="col">Apellido</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
@@ -38,6 +38,7 @@
 <script src="{{ asset('js/admin/clientes/editar/guardar_cambios.js') }}"></script>
 
 <script src="{{ asset('js/admin/clientes/mostrar/eliminar.js') }}"></script>
+<script src="{{ asset('js/admin/clientes/mostrar/mapa.js') }}"></script>
 <script src="{{ asset('js/admin/backend/send_data.js') }}"></script>
 {{--lista dias de pago --}}
 <script src="{{ asset('js/admin/clientes/editar/diaspago.js') }}"></script>

@@ -87,7 +87,13 @@ function cargar_datos_seleccion(datos) {
             `<br><i>Dias de plazo</i>` +
             datos["dia_pago"]["plazo"]
     );
-
+    //mostrar mapa si existe alguna ubicacion
+    if (datos["instalacion"]["direccion"]) {
+        ubicacionGps(datos["instalacion"]["direccion"]);
+    } else {
+        $(".mapa").hide();
+    }
+    ///////////////////////////////////////////////
     document.getElementById("direccion_seleccion").value =
         datos["instalacion"]["direccion"];
     document.getElementById("comentario_seleccion").value =

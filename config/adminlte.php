@@ -437,7 +437,26 @@ return [
     */
 
     'plugins' => [
-
+        'api_map' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'https://polyfill.io/v3/polyfill.min.js?features=default'
+                ]
+            ]
+        ],
+        'api_map' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAEcsXf99m1yL7XqPZ4pW0OvGlPUwqPbVI&callback=initMap&v=weekly'
+                ]
+            ]
+        ],
         'verifica_campos' => [
             'active' => true,
             'files' => [
