@@ -9,8 +9,8 @@ function ubicacionGps(coords_txt) {
     });
     new google.maps.Marker({
         position: {
-            lat: coords[0],
-            lng: coords[1],
+            lat: parseFloat(coords[0]),
+            lng: parseFloat(coords[1]),
         },
         map,
         zoom: 4,
