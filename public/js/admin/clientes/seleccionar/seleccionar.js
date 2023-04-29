@@ -89,7 +89,7 @@ function cargar_datos_seleccion(datos) {
     );
     //mostrar mapa si existe alguna ubicacion
     if (datos["instalacion"]["gps"]) {
-        ubicacionGps(datos["instalacion"]["direccion"]);
+        ubicacionGps(datos["instalacion"]["gps"]);
         $(".mapa").show();
     } else {
         $(".mapa").hide();
