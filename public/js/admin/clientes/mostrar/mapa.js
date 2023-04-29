@@ -1,7 +1,8 @@
 function ubicacionGps(coords) {
     new google.maps.Map(document.getElementById("div_mapa"), {
-        zoom: 8,
-        center: coords,
+        position: coords,
+        map,
+        zoom: 4,
     });
 }
 
