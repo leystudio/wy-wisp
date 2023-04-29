@@ -29,10 +29,6 @@ window.addEventListener("load", function () {
                         lng: position.coords.longitude,
                     };
 
-                    const posicion = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude,
-                    };
                     map.setCenter(pos);
 
                     //mover el marcador
@@ -42,16 +38,15 @@ window.addEventListener("load", function () {
                     }
 
                     const marker = new google.maps.Marker({
-                        position: posicion,
+                        position: pos,
                         map,
                         //title: "Hello World!",
                         zoom: 10,
                     });
                     marcar(
                         marker,
-                        "lat: " +
-                            position.coords.latitude +
-                            ", lng: " +
+                        position.coords.latitude +
+                            "," +
                             position.coords.longitude
                     );
                 },
@@ -93,10 +88,7 @@ window.addEventListener("load", function () {
 
         marcar(
             marker,
-            "lat: " +
-                mapsMouseEvent.latLng.lat() +
-                ", lng: " +
-                mapsMouseEvent.latLng.lng()
+            mapsMouseEvent.latLng.lat() + "," + mapsMouseEvent.latLng.lng()
         );
     });
 
@@ -105,7 +97,7 @@ window.addEventListener("load", function () {
 
     function marcar(marker, marca) {
         coordenadas = marca;
-        console.log(coordenadas);
+        console.log(marca);
         markers = []; //limpia el arrayy
         markers.push(marker); //agrega la posicion del marcador al array
 
@@ -122,7 +114,6 @@ window.addEventListener("load", function () {
         markers[0].setMap(null);
         $(".del_ubicacion_actual").hide();
         coordenadas = "";
-        console.log(coordenadas);
 
         markers = []; //limpia el arrayy
     });
