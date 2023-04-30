@@ -79,8 +79,8 @@
                     </div>
                     <div class="mb-3 mapa">
                         <div class="card d-flex">
-                            <div class="card-header h4" id="ubicacion"> Gps</div>
-                            <div class="  btn btn-info btn_ubicacion_actual  "> Ubicacion actual</div>
+                            <div class="card-header h4"> Gps</div>
+                            <div class="  btn btn-info btn_geolocalizar"> Geolocalizar</div>
                             <div class="btn btn-danger del_ubicacion_actual"> ELiminar Ubicacion</div>
                             <div class="card-body">
 

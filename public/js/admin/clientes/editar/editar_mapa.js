@@ -1,33 +1,33 @@
 var coordenadas;
 function datos_gps(coords_txt) {
-    $(".mapa").show();
-
-    coords = coords_txt.split(",");
-    const posicion = {
-        lat: parseFloat(coords[0]),
-        lng: parseFloat(coords[1]),
-    };
-
     let markers = [];
-    const myLatlng = posicion;
-    const map = new google.maps.Map(document.getElementById("div_mapa"), {
-        zoom: 8,
-        center: posicion,
-    });
-    //Marcar la ubicacion
-    marker = new google.maps.Marker({
-        position: posicion,
-        map,
-    });
-    marcar(marker, posicion);
-    //BOTON UBICAR
-    const locationButton = document.createElement("button");
-    locationButton.textContent = "Mi ubicacion actual";
-    locationButton.classList.add("custom-map-control-button");
-    $(".btn_ubicacion_actual").html(locationButton);
+    if (coords_txt) {
+        coords = coords_txt.split(",");
+        const posicion = {
+            lat: parseFloat(coords[0]),
+            lng: parseFloat(coords[1]),
+        };
+        const myLatlng = posicion;
+        const map = new google.maps.Map(document.getElementById("div_mapa"), {
+            zoom: 8,
+            center: posicion,
+        });
+        //Marcar la ubicacion
+        marker = new google.maps.Marker({
+            position: posicion,
+            map,
+        });
+        marcar(marker, posicion);
+    } else {
+        $(".mapa").show();
+        const map = new google.maps.Map(document.getElementById("div_mapa"), {
+            zoom: 4,
+            center: { lat: 10.8039442, lng: -75.8312517 },
+        });
+    }
 
     //Geolocalizar
-    locationButton.addEventListener("click", () => {
+    $(".btn_geolocalizar").on("click", () => {
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
@@ -96,6 +96,7 @@ function datos_gps(coords_txt) {
         );
     });
 
+    //marcar
     function marcar(marker, marca) {
         coordenadas = marca;
         markers = []; //limpia el arrayy
