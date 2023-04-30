@@ -30,7 +30,7 @@ function cargar_datos(datos) {
     plan_id = datos["cliente"]["plan_id"];
     cliente_id = datos["cliente"]["id"];
     instalation_id = datos["instalacion"]["id"];
-
+    datos_gps(datos["instalacion"]["gps"]);
     frame = document.getElementById("lista_planes");
     $("#lista_planes").html("");
     for (let i = 0; i < datos["planes"].length; i++) {

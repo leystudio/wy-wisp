@@ -54,8 +54,8 @@
 
                 <div>
                     <h3>Materiales </h3>
-                   
-                    <table id="tabla_materiales_inst"class="table table-sm table-responsive-sm table-secondary">
+
+                    <table id="tabla_materiales_inst" class="table table-sm table-responsive-sm table-secondary">
                         <thead>
                             <th>Marca</th>
                             <th>modelo</th>
@@ -64,7 +64,7 @@
                         </thead>
                         <tbody id="materiales_instalados"></tbody>
                     </table>
-                  @include('admin.clientes.editar.table_lista_materiales') 
+                    @include('admin.clientes.editar.table_lista_materiales')
 
                 </div>
 
@@ -77,7 +77,17 @@
                         <input id="direccion" type="text" class="form-control" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default">
                     </div>
+                    <div class="mb-3 mapa">
+                        <div class="card d-flex">
+                            <div class="card-header h4"> gps</div>
+                            <div class="card-body">
+                                <div style="height:300px" id="div_mapa"></div>
+                            </div>
 
+
+                        </div>
+
+                    </div>
                     <div class="input-group mb-3">
 
                     </div>
