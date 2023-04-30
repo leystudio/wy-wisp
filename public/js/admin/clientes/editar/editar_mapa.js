@@ -1,7 +1,6 @@
 var coordenadas;
 function datos_gps(coords_txt) {
     let markers = [];
-    const map = new google.maps.Map(document.getElementById("div_mapa"));
     if (coords_txt) {
         coords = coords_txt.split(",");
         const posicion = {
@@ -10,10 +9,11 @@ function datos_gps(coords_txt) {
         };
         const myLatlng = posicion;
         //abrir el mapa
-        map({
+        const map = new google.maps.Map(document.getElementById("div_mapa"), {
             center: posicion,
-            zoom: 8,
+            zoom: 10,
         });
+
         //Marcar la ubicacion
         marker = new google.maps.Marker({
             position: posicion,
