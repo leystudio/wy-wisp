@@ -1,7 +1,7 @@
 var coordenadas;
 function datos_gps(coords_txt) {
     let markers = [];
-
+    const map = new google.maps.Map(document.getElementById("div_mapa"));
     if (coords_txt) {
         coords = coords_txt.split(",");
         const posicion = {
@@ -10,7 +10,7 @@ function datos_gps(coords_txt) {
         };
         const myLatlng = posicion;
         //abrir el mapa
-        const map = new google.maps.Map(document.getElementById("div_mapa"), {
+        map({
             center: posicion,
             zoom: 8,
         });
@@ -19,18 +19,18 @@ function datos_gps(coords_txt) {
             position: posicion,
             map,
         });
-        // Create the initial InfoWindow.
-        let infoWindow = new google.maps.InfoWindow();
-        infoWindow.open(map);
+
         marcar(marker, posicion);
     } else {
         const map = new google.maps.Map(document.getElementById("div_mapa"), {
             center: { lat: 10.8039442, lng: -75.8312517 },
-            zoom: 8,
+            zoom: 10,
         });
         $(".mapa").show();
     }
-
+    // Create the initial InfoWindow.
+    let infoWindow = new google.maps.InfoWindow();
+    infoWindow.open(map);
     //Geolocalizar
     $(".btn_geolocalizar").on("click", () => {
         // Try HTML5 geolocation.
