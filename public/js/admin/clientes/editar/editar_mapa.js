@@ -1,5 +1,7 @@
 var coordenadas;
 function datos_gps(coords_txt) {
+    $(".mapa").show();
+
     coords = coords_txt.split(",");
     const posicion = {
         lat: parseFloat(coords[0]),
