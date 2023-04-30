@@ -9,8 +9,7 @@ function datos_gps(coords_txt) {
             lng: parseFloat(coords[1]),
         };
         //abrir el mapa
-        map_edit({ center: posicion, zoom: 10 });
-
+        map_edit.setCenter(posicion);
         //Marcar la ubicacion
         marker = new google.maps.Marker({
             position: posicion,
