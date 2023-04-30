@@ -10,6 +10,7 @@ function datos_gps(coords_txt) {
         };
         //abrir el mapa
         map_edit.setCenter(posicion);
+        map_edit.zoom(6);
         //Marcar la ubicacion
         marker = new google.maps.Marker({
             position: posicion,
