@@ -1,6 +1,7 @@
 var coordenadas;
 function datos_gps(coords_txt) {
     let markers = [];
+    $(".mapa").show();
     const map_edit = new google.maps.Map(document.getElementById("div_mapa"));
     if (coords_txt) {
         coords = coords_txt.split(",");
@@ -10,7 +11,6 @@ function datos_gps(coords_txt) {
         };
         //abrir el mapa
         map_edit.setCenter(posicion);
-        map_edit.zoom(6);
         //Marcar la ubicacion
         marker = new google.maps.Marker({
             position: posicion,
@@ -20,8 +20,6 @@ function datos_gps(coords_txt) {
         marcar(marker, posicion);
     } else {
         map_edit({ center: { lat: 10.8039442, lng: -75.8312517 }, zoom: 10 });
-
-        $(".mapa").show();
     }
     // Create the initial InfoWindow.
     let infoWindow = new google.maps.InfoWindow();
