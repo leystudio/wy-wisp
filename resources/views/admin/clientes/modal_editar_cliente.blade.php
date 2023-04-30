@@ -79,11 +79,15 @@
                     </div>
                     <div class="mb-3 mapa">
                         <div class="card d-flex">
-                            <div class="card-header h4"> gps</div>
+                            <div class="card-header h4" id="ubicacion"> Gps</div>
+                            <div class="  btn btn-info btn_ubicacion_actual  "> Ubicacion actual</div>
+                            <div class="btn btn-danger del_ubicacion_actual"> ELiminar Ubicacion</div>
                             <div class="card-body">
-                                <div style="height:300px" id="div_mapa"></div>
+
+                                <div style="height:300px" id="map"></div>
                             </div>
 
+                            <input type='hidden' id="coordenadas">
 
                         </div>
 

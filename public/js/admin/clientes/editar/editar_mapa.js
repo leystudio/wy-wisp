@@ -13,18 +13,18 @@ function datos_gps(coords_txt) {
         center: posicion,
     });
     //Marcar la ubicacion
-    new google.maps.Marker({
+    marker = new google.maps.Marker({
         position: posicion,
         map,
     });
-
+    marcar(marker, posicion);
     //BOTON UBICAR
     const locationButton = document.createElement("button");
     locationButton.textContent = "Mi ubicacion actual";
     locationButton.classList.add("custom-map-control-button");
     $(".btn_ubicacion_actual").html(locationButton);
 
-    //click en boton ubicar
+    //Geolocalizar
     locationButton.addEventListener("click", () => {
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
