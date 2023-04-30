@@ -24,7 +24,7 @@ function datos_gps(coords_txt) {
         infoWindow.open(map);
         marcar(marker, posicion);
     } else {
-        new google.maps.Map(document.getElementById("div_mapa"), {
+        const map = new google.maps.Map(document.getElementById("div_mapa"), {
             center: { lat: 10.8039442, lng: -75.8312517 },
             zoom: 8,
         });
