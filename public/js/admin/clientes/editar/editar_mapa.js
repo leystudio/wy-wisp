@@ -1,36 +1,31 @@
 var coordenadas;
 function datos_gps(coords_txt) {
     let markers = [];
+    const map_edit = new google.maps.Map(document.getElementById("div_mapa"));
     if (coords_txt) {
         coords = coords_txt.split(",");
         const posicion = {
             lat: parseFloat(coords[0]),
             lng: parseFloat(coords[1]),
         };
-        const myLatlng = posicion;
         //abrir el mapa
-        const map = new google.maps.Map(document.getElementById("div_mapa"), {
-            center: posicion,
-            zoom: 10,
-        });
+        map_edit({ center: posicion, zoom: 10 });
 
         //Marcar la ubicacion
         marker = new google.maps.Marker({
             position: posicion,
-            map,
+            map_edit,
         });
 
         marcar(marker, posicion);
     } else {
-        const map = new google.maps.Map(document.getElementById("div_mapa"), {
-            center: { lat: 10.8039442, lng: -75.8312517 },
-            zoom: 10,
-        });
+        map_edit({ center: { lat: 10.8039442, lng: -75.8312517 }, zoom: 10 });
+
         $(".mapa").show();
     }
     // Create the initial InfoWindow.
     let infoWindow = new google.maps.InfoWindow();
-    infoWindow.open(map);
+    infoWindow.open(map_edit);
     //Geolocalizar
     $(".btn_geolocalizar").on("click", () => {
         // Try HTML5 geolocation.
@@ -42,7 +37,7 @@ function datos_gps(coords_txt) {
                         lng: position.coords.longitude,
                     };
 
-                    map.setCenter(pos);
+                    map_edit.setCenter(pos);
 
                     //mover el marcador
                     //for (let i = 0; i < markers.length; i++) {}
@@ -52,7 +47,7 @@ function datos_gps(coords_txt) {
 
                     const marker = new google.maps.Marker({
                         position: pos,
-                        map,
+                        map_edit,
                         //title: "Hello World!",
                         zoom: 10,
                     });
@@ -69,7 +64,7 @@ function datos_gps(coords_txt) {
             );
         } else {
             // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map.getCenter());
+            handleLocationError(false, infoWindow, map_edit.getCenter());
         }
         // si no tubo exito
         function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -79,12 +74,12 @@ function datos_gps(coords_txt) {
                     ? "Error: EL servicio de geolocalizacion ha fallado."
                     : "Error: Su navegador no soporta esta herramienta."
             );
-            infoWindow.open(map);
+            infoWindow.open(map_edit);
         }
     });
     //-------------------------------------------------------------------------
     // a la escucha del click para poner la marca en el mapa
-    map.addListener("click", (mapsMouseEvent) => {
+    map_edit.addListener("click", (mapsMouseEvent) => {
         if (markers.length) {
             markers[0].setMap(null);
         }
