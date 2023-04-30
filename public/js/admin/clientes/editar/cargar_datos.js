@@ -69,7 +69,6 @@ function cargar_datos(datos) {
     }
     $("#" + datos["plan_cliente"]["id"]).prop("checked", true);
     dias_pago(datos);
-    console.log(datos["plan_cliente"]["id"]);
 
     $("input[name=plan]").click(function () {
         plan_id = $(this).attr("id");

@@ -105,8 +105,8 @@ function datos_gps(coords_txt) {
         coordenadas = marca;
         console.log(marca);
         markers = []; //limpia el arrayy
-        markers.push(marker); //agrega la posicion del marcador al array
-
+        markers.push(marker); //agrega marca al array
+        console.log(markers);
         //boton eliminar ubicacion
         if (markers.length) {
             $(".del_ubicacion_actual").show();
