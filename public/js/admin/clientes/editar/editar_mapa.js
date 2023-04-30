@@ -78,8 +78,6 @@ function datos_gps(coords_txt) {
     //-------------------------------------------------------------------------
     // a la escucha del click para poner la marca en el mapa
     map.addListener("click", (mapsMouseEvent) => {
-        // Close the current InfoWindow.
-        infoWindow.close();
         if (markers.length) {
             markers[0].setMap(null);
         }
@@ -88,18 +86,13 @@ function datos_gps(coords_txt) {
             position: mapsMouseEvent.latLng,
             map,
             zoom: 4,
-            //title: "Hello World!",
         });
-        $(".del_ubicacion_actual").show(50);
 
         marcar(
             marker,
             mapsMouseEvent.latLng.lat() + "," + mapsMouseEvent.latLng.lng()
         );
     });
-
-    //marcar
-    $(".del_ubicacion_actual").hide();
 
     function marcar(marker, marca) {
         coordenadas = marca;
