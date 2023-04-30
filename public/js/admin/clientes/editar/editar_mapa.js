@@ -103,12 +103,10 @@ function datos_gps(coords_txt) {
 
     function marcar(marker, marca) {
         coordenadas = marca;
-        console.log(marca);
         markers = []; //limpia el arrayy
         markers.push(marker); //agrega marca al array
-        console.log(markers);
         //boton eliminar ubicacion
-        if (markers.length) {
+        if (marca) {
             $(".del_ubicacion_actual").show();
         } else {
             $(".del_ubicacion_actual").hide();
