@@ -1,26 +1,36 @@
 var coordenadas;
 function datos_gps(coords_txt) {
-    let markers = [];
-    $(".mapa").show();
-    const map_edit = new google.maps.Map(document.getElementById("div_mapa"));
-    if (coords_txt) {
-        coords = coords_txt.split(",");
-        const posicion = {
-            lat: parseFloat(coords[0]),
-            lng: parseFloat(coords[1]),
-        };
-        //abrir el mapa
-        map_edit.setCenter(posicion);
-        //Marcar la ubicacion
-        marker = new google.maps.Marker({
-            position: posicion,
-            map_edit,
-        });
+    let markers = []; //array para capturar las nuevas coordenadas
+    $(".mapa").show(); //muestra el div oculto del mapa
 
-        marcar(marker, posicion);
-    } else {
-        map_edit({ center: { lat: 10.8039442, lng: -75.8312517 }, zoom: 10 });
+    function initCoords(coords_txt) {
+        if (coords_txt) {
+            coords = coords_txt.split(",");
+
+            const posicion = {
+                lat: parseFloat(coords[0]),
+                lng: parseFloat(coords[1]),
+            };
+            return posicion;
+        } else {
+            const posicion = { lat: 10.8039442, lng: -75.8312517 };
+        }
+        return posicion;
     }
+    posicion = initCoords;
+    //abrir el mapa
+    const map_edit = new google.maps.Map(document.getElementById("div_mapa"), {
+        center: posicion,
+        zoom: 8,
+    });
+
+    //Marcar la ubicacion
+    marker = new google.maps.Marker({
+        position: posicion,
+        map_edit,
+    });
+
+    marcar(marker, posicion);
     // Create the initial InfoWindow.
     let infoWindow = new google.maps.InfoWindow();
     infoWindow.open(map_edit);
