@@ -97,7 +97,6 @@ window.addEventListener("load", function () {
 
     function marcar(marker, marca) {
         coordenadas = marca;
-        console.log(marca);
         markers = []; //limpia el arrayy
         markers.push(marker); //agrega la posicion del marcador al array
 

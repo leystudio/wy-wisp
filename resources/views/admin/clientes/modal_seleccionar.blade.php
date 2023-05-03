@@ -48,7 +48,7 @@
                         <div class="card d-flex">
                             <div class="card-header h4"> gps</div>
                             <div class="card-body">
-                                <div style="height:300px" id="div_mapa"></div>
+                                <div style="height:300px" id="mapa"></div>
                             </div>
 
 

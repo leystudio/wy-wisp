@@ -10,7 +10,7 @@
         <div style="height:300px" id="map"></div>
     </div>
 
-    <input type='hidden' id="coordenadas">
+
 
 </div>
 

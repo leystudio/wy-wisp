@@ -84,7 +84,7 @@
                             <div class="btn btn-danger del_ubicacion_actual"> ELiminar Ubicacion</div>
                             <div class="card-body">
 
-                                <div style="height:300px" id="div_mapa"></div>
+                                <div style="height:300px" id="mapa_div_edit"></div>
                             </div>
 
 

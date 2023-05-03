@@ -36,7 +36,7 @@
 <script src="{{ asset('js/admin/clientes/editar/cargar_datos.js') }}"></script>
 <script src="{{ asset('js/admin/clientes/editar/seleccionar_equipos.js') }}"></script>
 <script src="{{ asset('js/admin/clientes/editar/guardar_cambios.js') }}"></script>
-<!-- <script src="{{ asset('js/admin/clientes/editar/editar_mapa.js') }}"></script> -->
+<script src="{{ asset('js/admin/clientes/editar/editar_mapa.js') }}"></script>
 
 <script src="{{ asset('js/admin/clientes/mostrar/eliminar.js') }}"></script>
 <script src="{{ asset('js/admin/clientes/mostrar/mapa.js') }}"></script>

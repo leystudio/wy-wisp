@@ -5,6 +5,7 @@ document.getElementById("guardar").addEventListener("click", function () {
         telefono: document.getElementById("telefono").value,
         plan_id: plan_id,
         ddp: diapago_id,
+        gps: coordenadas,
         instalation_id: instalation_id,
         direccion: document.getElementById("direccion").value,
         comentario: document.getElementById("comentario").value,

@@ -166,6 +166,7 @@ class clientesController extends Controller
 
         $instalacion = Instalation::find($request->instalation_id);
         $instalacion->direccion = $request->direccion;
+        $instalacion->gps = $request->gps;
         $instalacion->comentario = $request->comentario;
         $instalacion->save();
         return 1;

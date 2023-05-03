@@ -3,7 +3,7 @@ function datos_gps(coords_txt) {
     let markers = []; //array para capturar las nuevas coordenadas
     $(".mapa").show(); //muestra el div oculto del mapa
 
-    function initCoords(coords_txt) {
+    function iniciarMapa(coords_txt) {
         if (coords_txt) {
             coords = coords_txt.split(",");
 
@@ -11,29 +11,41 @@ function datos_gps(coords_txt) {
                 lat: parseFloat(coords[0]),
                 lng: parseFloat(coords[1]),
             };
-            return posicion;
+            //abrir el mapa
+            const map = new google.maps.Map(
+                document.getElementById("mapa_div_edit"),
+                {
+                    center: posicion,
+                    zoom: 8,
+                }
+            );
+            //Marcar la ubicacion
+            marker = new google.maps.Marker({
+                position: posicion,
+                map,
+            });
+
+            marcar(marker, posicion);
+            // Create the initial InfoWindow.
+            let infoWindow = new google.maps.InfoWindow();
+            infoWindow.open(map);
+            return map;
         } else {
+            $(".del_ubicacion_actual").hide();
             const posicion = { lat: 10.8039442, lng: -75.8312517 };
+            //abrir el mapa
+            const map = new google.maps.Map(
+                document.getElementById("mapa_div_edit"),
+                {
+                    center: posicion,
+                    zoom: 8,
+                }
+            );
+            return map;
         }
-        return posicion;
     }
-    posicion = initCoords;
-    //abrir el mapa
-    const map_edit = new google.maps.Map(document.getElementById("div_mapa"), {
-        center: posicion,
-        zoom: 8,
-    });
+    map = iniciarMapa(coords_txt);
 
-    //Marcar la ubicacion
-    marker = new google.maps.Marker({
-        position: posicion,
-        map_edit,
-    });
-
-    marcar(marker, posicion);
-    // Create the initial InfoWindow.
-    let infoWindow = new google.maps.InfoWindow();
-    infoWindow.open(map_edit);
     //Geolocalizar
     $(".btn_geolocalizar").on("click", () => {
         // Try HTML5 geolocation.
@@ -45,7 +57,7 @@ function datos_gps(coords_txt) {
                         lng: position.coords.longitude,
                     };
 
-                    map_edit.setCenter(pos);
+                    map.setCenter(pos);
 
                     //mover el marcador
                     //for (let i = 0; i < markers.length; i++) {}
@@ -55,8 +67,7 @@ function datos_gps(coords_txt) {
 
                     const marker = new google.maps.Marker({
                         position: pos,
-                        map_edit,
-                        //title: "Hello World!",
+                        map,
                         zoom: 10,
                     });
                     marcar(
@@ -72,7 +83,7 @@ function datos_gps(coords_txt) {
             );
         } else {
             // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map_edit.getCenter());
+            handleLocationError(false, infoWindow, map.getCenter());
         }
         // si no tubo exito
         function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -82,12 +93,12 @@ function datos_gps(coords_txt) {
                     ? "Error: EL servicio de geolocalizacion ha fallado."
                     : "Error: Su navegador no soporta esta herramienta."
             );
-            infoWindow.open(map_edit);
+            infoWindow.open(map);
         }
     });
     //-------------------------------------------------------------------------
     // a la escucha del click para poner la marca en el mapa
-    map_edit.addListener("click", (mapsMouseEvent) => {
+    map.addListener("click", (mapsMouseEvent) => {
         if (markers.length) {
             markers[0].setMap(null);
         }
