@@ -4,11 +4,11 @@ function ubicacionGps(coords_txt) {
         lat: parseFloat(coords[0]),
         lng: parseFloat(coords[1]),
     };
-    const map = new google.maps.Map(document.getElementById("div_mapa"), {
-        zoom: 10,
+    const map = new google.maps.Map(document.getElementById("mapa"), {
         center: posicion,
+        zoom: 10,
     });
-    new google.maps.Marker({
+    marker = new google.maps.Marker({
         position: posicion,
         map,
     });
