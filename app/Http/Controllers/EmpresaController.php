@@ -38,7 +38,7 @@ class EmpresaController extends Controller
             'precio' => 1000,
             'empresa_id' => $nueva_empresa->id,
         ]);
-        return redirect()->route('dashboard');
+        return redirect()->route('admin.dashboard');
     }
 
     public function mostrar()
