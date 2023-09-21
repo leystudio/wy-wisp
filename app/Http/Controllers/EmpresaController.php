@@ -33,7 +33,7 @@ class EmpresaController extends Controller
         //crear plan basico
         Plane::create([
             'nombre' => 'basico',
-            'up' => 4000,
+            'up' => 8000,
             'down' => 4000,
             'precio' => 1000,
             'empresa_id' => $nueva_empresa->id,
